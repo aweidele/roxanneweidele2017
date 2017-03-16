@@ -1,11 +1,3 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
-</head>
-
-<body>
-Roxanne Weidele 2017
-</body>
-</html>
+<?php get_header(); ?>
+<?php the_content(); ?>
+<?php get_footer(); ?>
