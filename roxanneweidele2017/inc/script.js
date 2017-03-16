@@ -8,4 +8,8 @@ $(document).ready(function() {
       nav.addClass('open').removeClass('closed');
     }
   });
+  
+  //$(window).resize(function() {
+    //$('header h1').html($(window).width());
+  //});
 });

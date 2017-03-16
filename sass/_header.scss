@@ -4,6 +4,7 @@ body > header {
   top: 0;
   left: 0;
   background: $dark;
+  z-index: 9999;
   @extend %clearfix;
   
   h1 {
