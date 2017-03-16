@@ -1,0 +1,156 @@
+body > header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: $dark;
+  @extend %clearfix;
+  
+  h1 {
+    @extend %serif;
+    text-transform: uppercase;
+    font-size: 2.8rem;
+    line-height: 0.844em;
+    > a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      &,&:hover { color: $primary; }
+    }
+  }
+  
+  nav {
+    font-size: 1.4rem;
+    text-align: right;
+    @extend %sans;
+    
+    a {
+      color: $secondary;
+      display: block;
+      padding: 0.5em 10px;
+      &:hover {
+        color: $white;
+      }
+    }
+    
+    button {
+      float: right;
+      width: $hh;
+      height: $hh;
+      background: $black;
+      border: 0;
+      cursor: pointer;
+      position: relative;
+      
+      &:before,&:after {
+        content: " ";
+      }
+      
+      i {
+        transition: opacity $speed;
+      }
+      
+      i,&:before,&:after {
+        width: 27px;
+        height: 1px;
+        background-color: $white;
+        display: block;
+        position: absolute;
+        left: 10px;
+        top: 23px;
+      }
+      
+      &:before {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+      }
+      
+      &:after {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+      }
+      
+    }
+    
+    &.open {
+      button {
+        i {
+          opacity: 0;
+        }
+        &:before {
+          -webkit-transform: translateY(0px) rotate(-45deg);
+          transform: translateY(0px) rotate(-45deg);
+          -webkit-animation: barTopOpen $speed;
+          animation: barTopOpen $speed;
+        }
+        &:after {
+          -webkit-transform: translateY(0px) rotate(45deg);
+          transform: translateY(0px) rotate(45deg);
+          -webkit-animation: barBottomOpen $speed;
+          animation: barBottomOpen $speed;
+        }
+      }
+    }
+    
+    &.closed {
+      button {
+        &:before {
+          -webkit-animation: barTopClose $speed;
+          animation: barTopClose $speed;
+        }
+        &:after {
+          -webkit-animation: barBottomClose $speed;
+          animation: barBottomClose $speed;
+        }
+      }
+    }
+    
+    > ul {
+      transition: all $speed;
+    }
+  }
+  
+  @media screen and (min-width: $breakpoint) {
+    width: $hw;
+    float: left;
+    padding-top: 20px;
+    h1 {
+      text-align: right;
+      font-size: 3.2rem;
+      a { padding: 0px 0px 0.5em 0px; }
+    }
+    > nav {
+      > button { display: none; }
+      a { padding: 0.5em 0; }
+    }
+  }
+  
+  @media screen and (max-width: $breakpoint - 1) {
+    
+    height: $hh;
+    
+    h1 {
+      width: calc(100% - #{$hh});
+      float: left;
+    }
+    
+    > nav {
+      > ul {
+        position: fixed;
+        width: 100%;
+        height: calc(100vh - #{$hh});
+        background: rgba($black,0.95);
+        top: $hh;
+        left: 100%;
+      }
+      
+      &.open {
+        > ul {
+          left: 0;
+        }
+      }
+    }
+    
+  }
+}

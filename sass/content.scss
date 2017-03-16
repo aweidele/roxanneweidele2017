@@ -1,0 +1,12 @@
+body {
+  @extend %clearfix;
+  background-color: $dark;
+  color: $primary;
+  
+  > main {
+    padding: $hh 0 0 0;
+    @media screen and (min-width: $breakpoint) {
+      padding: 0 0 0 $hw;
+    }
+  }
+}

@@ -1,2 +1,60 @@
-/* Test */
+// INITIALIZE
+$speed: 0.25s;
 
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-weight: 300;
+}
+
+ul,ol {
+  list-style: none;
+}
+
+html { font-size: 62.5%; }
+body { font-size: 1em; }
+   
+a {
+  text-decoration: none;
+  transition: all $speed;
+}
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    height: 0;
+    clear: both;
+  }
+}
+
+%positionOff {
+  position: absolute;
+  left: -999999px;
+}
+
+// FONTS
+%serif { font-family: 'Cormorant Garamond', serif; }
+%sans  { font-family: 'Open Sans', sans-serif; }
+
+// COLORS
+$primary: #FFF6E4;
+$secondary: #FFF669;
+$dark: #21211E;
+$white: #FFFFFF;
+$black: #000000;
+
+// DIMENSIONS
+$breakpoint: 668px;
+$hh: 47px;
+$hw: 160px;
+
+@import 'animation';
+@import 'header';
+@import 'content';
+@import 'home';
+
+pre { font-size: 1.2rem; }

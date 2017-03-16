@@ -1,0 +1,16 @@
+.homepage-gallery {
+  padding: 20px 35px;
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+  article {
+    width: 100%;
+    background-color: $primary;
+    color: $dark;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+}
