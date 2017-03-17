@@ -76,6 +76,11 @@
       &:last-child {
         a { padding-left: 10px; }
       }
+      
+      i {
+        position: relative;
+        top: 1px;
+      }
     }
     
     a {

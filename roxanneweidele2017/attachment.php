@@ -50,8 +50,8 @@ if(have_posts()):while(have_posts()):the_post();
   </ul>
   <nav>
     <ul>
-      <li><a href="<?php echo get_permalink($gallery[$previous]['ID']); ?>">Previous</a></li>
-      <li><a href="<?php echo get_permalink($gallery[$next]['ID']); ?>">Next</a></li>
+      <li><a href="<?php echo get_permalink($gallery[$previous]['ID']); ?>"><i class="icon-angle-double-left"></i> Previous</a></li>
+      <li><a href="<?php echo get_permalink($gallery[$next]['ID']); ?>">Next <i class="icon-angle-double-right"></i></a></li>
     </ul>
   </nav>
 </section>
