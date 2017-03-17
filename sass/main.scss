@@ -40,6 +40,48 @@ a {
 %serif { font-family: 'Cormorant Garamond', serif; }
 %sans  { font-family: 'Open Sans', sans-serif; }
 
+@font-face {
+  font-family: 'rw';
+  src:  url('inc/fonts/rw.eot?lzygsr');
+  src:  url('inc/fonts/rw.eot?lzygsr#iefix') format('embedded-opentype'),
+    url('inc/fonts/rw.ttf?lzygsr') format('truetype'),
+    url('inc/fonts/rw.woff?lzygsr') format('woff'),
+    url('inc/fonts/rw.svg?lzygsr#rw') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'rw' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-twitter:before {
+  content: "\f099";
+}
+.icon-facebook:before {
+  content: "\f09a";
+}
+.icon-facebook-f:before {
+  content: "\f09a";
+}
+.icon-pinterest:before {
+  content: "\f0d2";
+}
+.icon-google-plus:before {
+  content: "\f0d5";
+}
+
 // COLORS
 $primary: #FFF6E4;
 $secondary: #FFF669;
@@ -56,5 +98,6 @@ $hw: 160px;
 @import 'header';
 @import 'content';
 @import 'home';
+@import 'attachment';
 
-pre { font-size: 1.2rem; display: none; }
+pre { font-size: 1.2rem; /* display: none; */ }

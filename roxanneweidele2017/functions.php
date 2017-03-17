@@ -23,5 +23,9 @@ function register_my_menu() {
 add_theme_support('post-thumbnails');
 add_image_size('Homepage Thumbnail',265,9999);
 add_image_size('Homepage Mobile Thumbnail',210,210,true);
-add_image_size('Mobile Max',668,9999);
+add_image_size('Mobile Max',668,668);
+add_image_size('XLarge',2000,2000);
+add_image_size('Large',1600,99999);
+add_image_size('Med',1200,99999);
+add_image_size('Small',800,99999);
 ?>
