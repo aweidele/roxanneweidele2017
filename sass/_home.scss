@@ -34,9 +34,7 @@ $thumbPad: 20px;
  
   figure {
     width: 100%;
-    margin-bottom: 20px;
     display: block;
-    background-color: $black;
     -webkit-column-break-inside: avoid;
           page-break-inside: avoid;
                break-inside: avoid;
@@ -47,12 +45,13 @@ $thumbPad: 20px;
       display: block;
       position: relative;
       z-index: 0;
+      border: 1px solid $black;
     }
     
     > a {
       display: block;
       position: relative;
-      padding: 2px;
+      margin-bottom: 20px;
       
       > figcaption {
         position: absolute;
