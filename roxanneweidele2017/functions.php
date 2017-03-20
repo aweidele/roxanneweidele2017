@@ -28,4 +28,31 @@ add_image_size('XLarge',2000,2000);
 add_image_size('Large',1600,99999);
 add_image_size('Med',1200,99999);
 add_image_size('Small',800,99999);
+
+function addMedium() {
+    $labels = array(
+        'name'              => 'Media',
+        'singular_name'     => 'Medium',
+        'search_items'      => 'Search Media',
+        'all_items'         => 'All Media',
+        'parent_item'       => 'Parent Medium',
+        'parent_item_colon' => 'Parent Medium:',
+        'edit_item'         => 'Edit Medium',
+        'update_item'       => 'Update Medium',
+        'add_new_item'      => 'Add New Medium',
+        'new_item_name'     => 'New Medium Name',
+        'menu_name'         => 'Medium',
+    );
+ 
+    $args = array(
+        'labels' => $labels,
+        'hierarchical' => true,
+        'query_var' => 'true',
+        'rewrite' => 'true',
+        'show_admin_column' => 'true',
+    );
+ 
+    register_taxonomy( 'medium', 'attachment', $args );
+}
+add_action( 'init', 'addMedium' );
 ?>

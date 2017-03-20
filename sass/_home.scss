@@ -3,42 +3,85 @@ $thumbPad: 20px;
 
 .homepage-gallery {
   padding: 20px 10px;
-  -webkit-column-count: 2;
-  -moz-column-count: 2;
-  -column-count: 2;
-
-  -webkit-column-gap: $thumbPad;
-  -moz-column-gap: $thumbPad;
-  column-gap: $thumbPad;
-
-  @media screen and (min-width: 376px) {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    -column-count: 3;
-  }
-
-  @media screen and (min-width: $breakpoint) {
-    padding: 20px 35px;
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    -column-count: 2;
-  }
+  @extend %clearfix;
   
-  @for $i from 3 through 10 {
-    @media screen and (min-width: $breakpoint + (($thumbWidth + ($thumbPad * 2)) * ($i - 2))) {
-      -webkit-column-count: $i;
-      -moz-column-count: $i;
-      column-count: $i;
+  > header {
+    padding-bottom: 20px;
+    h2 {
+      border-bottom: 1px solid $primary;
+      padding-bottom: 0.125em;
+      margin-bottom: 2rem;
+      @media screen and (min-width: $breakpoint) {
+        text-align: right;
+      }
+    }
+    
+    nav {
+      @extend %clearfix;
+      li {
+        float: left;
+        font-size: 0rem;
+        margin-right: 5px;
+      }
+      
+      label {
+        display: block;
+        padding: 5px;
+        color: $primary;
+        text-transform: uppercase;
+        @extend %sans;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all $speed / 2;
+      }
+      
+      input[type="radio"],input[type="checkbox"] {
+        @extend %positionOff;
+        &:checked + label {
+          color: $dark;
+          background-color: $primary;
+        }
+      }
     }
   }
  
   figure {
-    width: 100%;
     display: block;
     -webkit-column-break-inside: avoid;
           page-break-inside: avoid;
                break-inside: avoid;
   
+    /*
+    @media screen and (max-width: 375px) {
+      width: 50%;
+      float: left;
+    
+      &:nth-child(2n+1) {
+        padding-right: 10px;
+        clear: both;
+      }
+    
+      &:nth-child(2n) {
+        padding-left: 10px;
+      }
+    }
+    @media screen and (min-width: 376px) and (max-width: $breakpoint - 1) {
+      width: 33.3%;
+      float: left;
+      
+      &:nth-child(3n+1) {
+        padding-right: 12px;
+        clear: both;
+      }
+      &:nth-child(3n+2) {
+        padding: 0 6px; 
+      }
+      &:nth-child(3n) {
+        padding-left: 12px;
+      }
+    }
+    */
+    
     picture,img {
       width: 100%;
       height: auto;
@@ -82,4 +125,97 @@ $thumbPad: 20px;
       
     }
   }
+
+  > div {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    -column-count: 2;
+
+    -webkit-column-gap: $thumbPad;
+    -moz-column-gap: $thumbPad;
+    column-gap: $thumbPad;
+
+    @media screen and (min-width: 376px) {
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
+      -column-count: 3;
+    }
+  }
+  
+  @media screen and (min-width: $breakpoint) {
+    padding: 20px 35px;
+    > div {
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      -column-count: 2;
+    }
+      
+    figure {
+      float: none;
+      width: 100%;
+    }
+  }
+  
+  @for $i from 3 through 10 {
+    @media screen and (min-width: $breakpoint + (($thumbWidth + ($thumbPad * 2)) * ($i - 2))) {
+      > div {
+        -webkit-column-count: $i;
+        -moz-column-count: $i;
+        column-count: $i;
+      }
+    }
+  }
+  
+  /*
+  > nav {
+    margin-bottom: 20px;
+    text-align: center;
+    
+    li {
+      display: inline-block;
+    }
+    
+    label {
+      @extend %sans;
+      background-color: $primary;
+      position: relative;
+      padding: 5px 5px 5px 23px;
+      color: $dark;
+      font-size: 1.2rem;
+      cursor: pointer;
+      
+      &:before {
+        width: 13px;
+        height: 13px;
+        display: block;
+        position: absolute;
+        top: 7px;
+        left: 5px;
+        box-sizing: border-box;
+        border: 1px solid $dark;
+        content: " ";
+        background: rgba(lighten($dark,20),0);
+        transition: background $speed / 2;
+      }
+      
+    }
+    
+    input[type="checkbox"] {
+      @extend %positionOff;
+      
+      &:checked + label {
+        &:before {
+          background: lighten($dark,20);
+        }
+      }
+    }
+    
+    @media screen and (min-width: $breakpoint) {
+      text-align: left;
+      li { display: block; margin-bottom: 5px; }
+      label { display: block; width: 100%; }
+    }
+    
+  }
+  */
 }
