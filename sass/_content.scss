@@ -10,3 +10,90 @@ body {
     }
   }
 }
+
+%page {
+  padding: 20px 10px;
+  @media screen and (min-width: $breakpoint) {
+    padding: 20px 35px;
+  }
+}
+
+%pageH1 {
+  border-bottom: 1px solid $primary;
+  padding-bottom: 0.125em;
+  margin-bottom: 2rem;
+  @media screen and (min-width: $breakpoint) {
+      text-align: right;
+  }
+}
+
+.page {
+  @extend %page;
+  > header > h1 {
+    @extend %pageH1;
+  }
+  
+  > section {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    font-size: 1.8rem;
+    line-height: 1.4em;
+    color: $white;
+    @extend %sans;
+    
+    p {
+      margin-bottom: 1em;
+      
+      + h2 { margin-top: 0.5em; }
+    }
+    
+    h2 {
+      font-size: 3.6rem;
+      margin-bottom: 0.5em;
+      font-style: italic;
+    }
+    
+    a {
+      color: $secondary;
+      &:hover {
+        color: $primary;
+      }
+    }
+    
+    @media screen and (min-width: 1150px) {
+      font-size: 2.4rem;
+      
+      h2 {
+        font-size: 4.0rem;
+      }
+    }
+    
+    dl {
+      @extend %clearfix;
+    }
+    
+    @media screen and (min-width: $breakpoint) {
+      dt,dd {
+        float: left;
+      }
+    }
+    
+    dt {
+      font-weight: 700;
+      clear: both;
+      &:after { content: "\00A0\00A0"; }
+    }
+    
+    dd {
+      margin-bottom: 1em;
+      
+      > span {
+        text-transform: uppercase;
+        color: $accent;
+        font-weight: 700;
+        font-size: 0.75em;
+      }
+    }
+  }
+}

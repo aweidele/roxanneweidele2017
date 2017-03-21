@@ -2,7 +2,7 @@
 /*** ADD SCRIPTS AND STYLES ***/
 function rw_scripts() {
   // styles
-  wp_enqueue_style( 'fonts', 'https://fonts.googleapis.com/css?family=Cormorant+Garamond:300|Open+Sans:300' );
+  wp_enqueue_style( 'fonts', 'https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i|Open+Sans:300,700' );
   wp_enqueue_style( 'main-style', get_template_directory_uri() . '/main.css' );
   //wp_enqueue_style( 'main-style', get_stylesheet_uri() );
   

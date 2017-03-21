@@ -7,7 +7,7 @@ body > header {
   z-index: 9999;
   @extend %clearfix;
   
-  h1 {
+  h1,.title {
     @extend %serif;
     text-transform: uppercase;
     font-size: 2.8rem;
@@ -116,7 +116,7 @@ body > header {
     width: $hw;
     float: left;
     padding-top: 20px;
-    h1 {
+    h1,.title {
       text-align: right;
       font-size: 3.2rem;
       a { padding: 0px 0px 0.5em 0px; }
@@ -131,7 +131,7 @@ body > header {
     
     height: $hh;
     
-    h1 {
+    h1,.title {
       width: calc(100% - #{$hh});
       float: left;
     }

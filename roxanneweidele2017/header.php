@@ -19,7 +19,11 @@
 
 <body>
 <header>
+ <?php if(is_front_page()) { ?>
   <h1><a href="<?php echo get_option('home'); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
+<?php } else { ?>
+  <div class="title"><a href="<?php echo get_option('home'); ?>"><?php echo get_bloginfo('name'); ?></a></div>
+<?php } ?>
   <nav>
     <button><i></i></button>
     <ul>

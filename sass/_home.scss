@@ -2,19 +2,13 @@ $thumbWidth: 200px;
 $thumbPad: 20px;
 
 .homepage-gallery {
-  padding: 20px 10px;
+  @extend %page;
   @extend %clearfix;
   
   > header {
     padding-bottom: 20px;
-    h2 {
-      border-bottom: 1px solid $primary;
-      padding-bottom: 0.125em;
-      margin-bottom: 2rem;
-      @media screen and (min-width: $breakpoint) {
-        text-align: right;
-      }
-    }
+    
+    h2 { @extend %pageH1; }
     
     nav {
       @extend %clearfix;
@@ -50,37 +44,6 @@ $thumbPad: 20px;
     -webkit-column-break-inside: avoid;
           page-break-inside: avoid;
                break-inside: avoid;
-  
-    /*
-    @media screen and (max-width: 375px) {
-      width: 50%;
-      float: left;
-    
-      &:nth-child(2n+1) {
-        padding-right: 10px;
-        clear: both;
-      }
-    
-      &:nth-child(2n) {
-        padding-left: 10px;
-      }
-    }
-    @media screen and (min-width: 376px) and (max-width: $breakpoint - 1) {
-      width: 33.3%;
-      float: left;
-      
-      &:nth-child(3n+1) {
-        padding-right: 12px;
-        clear: both;
-      }
-      &:nth-child(3n+2) {
-        padding: 0 6px; 
-      }
-      &:nth-child(3n) {
-        padding-left: 12px;
-      }
-    }
-    */
     
     picture,img {
       width: 100%;
@@ -143,7 +106,6 @@ $thumbPad: 20px;
   }
   
   @media screen and (min-width: $breakpoint) {
-    padding: 20px 35px;
     > div {
       -webkit-column-count: 2;
       -moz-column-count: 2;

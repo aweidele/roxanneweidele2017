@@ -41,7 +41,7 @@ if(have_posts()):while(have_posts()):the_post();
       <img src="<?php echo $image['large'][0]; ?>">
     </picture>
     <figcaption>
-      <h2><?php the_title(); ?></h2>
+      <h1><?php the_title(); ?></h1>
      </figcaption>
   </figure>
   <h3>Share:</h3>
