@@ -9,6 +9,12 @@ $(document).ready(function() {
     }
   });
   
+  sel = $('.homepage-gallery > header > nav input[name="filter"]:checked').val();
+  if(sel != 'all') {
+    $('.homepage-gallery > div > figure').hide();
+    $('.homepage-gallery > div > figure[data-medium="'+sel+'"]').show();
+  }
+  
   $('.homepage-gallery > header > nav input[name="filter"]').on('change',function() {
     med = $(this).val();
     medName = $(this).data('title');

@@ -87,6 +87,9 @@ a {
 .icon-angle-double-right:before {
   content: "\f101";
 }
+.icon-location:before {
+  content: "\e947";
+}
 
 // COLORS
 $primary: #FFF6E4;
@@ -115,5 +118,6 @@ h1,h2 {
 @import 'content';
 @import 'home';
 @import 'attachment';
+@import 'footer';
 
 pre { font-size: 1.2rem; /* display: none; */ }

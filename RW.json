@@ -1,59 +1,68 @@
 {
   "metadata": {
     "name": "RW",
-    "lastOpened": 1489776609136,
-    "created": 1489774830821
+    "lastOpened": 1490121761137,
+    "created": 1490121757862
   },
   "iconSets": [
     {
       "selection": [
         {
+          "ligatures": "location, map-marker",
+          "name": "location2",
+          "order": 19,
+          "id": 6,
+          "prevSize": 32,
+          "code": 59719,
+          "tempChar": ""
+        },
+        {
           "name": "angle-double-left2",
           "id": 4,
-          "order": 12,
+          "order": 20,
           "prevSize": 28,
           "code": 61696,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "name": "angle-double-right2",
           "id": 5,
-          "order": 13,
+          "order": 21,
           "prevSize": 28,
           "code": 61697,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "name": "twitter",
           "id": 0,
-          "order": 14,
+          "order": 22,
           "prevSize": 28,
           "code": 61593,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "name": "facebook, facebook-f",
           "id": 1,
-          "order": 15,
+          "order": 23,
           "prevSize": 28,
           "code": 61594,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "name": "pinterest",
           "id": 2,
-          "order": 16,
+          "order": 24,
           "prevSize": 28,
           "code": 61650,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "name": "google-plus",
           "id": 3,
-          "order": 17,
+          "order": 25,
           "prevSize": 28,
           "code": 61653,
-          "tempChar": ""
+          "tempChar": ""
         }
       ],
       "id": 3,
@@ -63,6 +72,20 @@
       "height": 1024,
       "prevSize": 32,
       "icons": [
+        {
+          "paths": [
+            "M512 0c-176.732 0-320 143.268-320 320 0 320 320 704 320 704s320-384 320-704c0-176.732-143.27-320-320-320zM512 512c-106.040 0-192-85.96-192-192s85.96-192 192-192 192 85.96 192 192-85.96 192-192 192z"
+          ],
+          "tags": [
+            "location",
+            "map-marker",
+            "pin"
+          ],
+          "defaultCode": 59719,
+          "grid": 16,
+          "id": 6,
+          "attrs": []
+        },
         {
           "id": 4,
           "paths": [
@@ -1319,7 +1342,7 @@
         {
           "name": "angle-double-left",
           "id": 229,
-          "order": 10,
+          "order": 0,
           "prevSize": 28,
           "code": 61698,
           "tempChar": ""
@@ -1327,7 +1350,7 @@
         {
           "name": "angle-double-right",
           "id": 230,
-          "order": 11,
+          "order": 0,
           "prevSize": 28,
           "code": 61699,
           "tempChar": ""
@@ -14235,8 +14258,11 @@
         {
           "ligatures": "location, map-marker",
           "name": "location",
-          "order": 0,
-          "id": 72
+          "order": 18,
+          "id": 72,
+          "prevSize": 32,
+          "code": 59720,
+          "tempChar": ""
         },
         {
           "ligatures": "location2, map-marker2",

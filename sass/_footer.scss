@@ -1,0 +1,13 @@
+footer {
+  position: fixed;
+  background-color: $black;
+  width: 100%;
+  padding: 5px 10px;
+  bottom: 0;
+  left: 0;
+  z-index: 999999;
+  font-size: 1.2rem;
+  text-align:  right;
+  height: 27px;
+  @extend %sans;
+}

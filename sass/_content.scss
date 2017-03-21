@@ -4,9 +4,9 @@ body {
   color: $primary;
   
   > main {
-    padding: $hh 0 0 0;
+    padding: $hh 0 27px 0;
     @media screen and (min-width: $breakpoint) {
-      padding: 0 0 0 $hw;
+      padding: 0 0 27px $hw;
     }
   }
 }
@@ -95,5 +95,19 @@ body {
         font-size: 0.75em;
       }
     }
+    
+    > aside {
+      margin-bottom: 3em;
+      
+      p {
+        margin-bottom: 0;
+      }
+    }
   }
+}
+
+.map-link {
+  font-size: 0.75em;
+  font-weight: 700;
+  text-transform: uppercase;
 }

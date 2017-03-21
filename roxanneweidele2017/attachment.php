@@ -27,6 +27,8 @@ if(have_posts()):while(have_posts()):the_post();
   
   $previous = $current - 1 >= 0 ? $current - 1 : sizeof($gallery) - 1;
   $next = $current + 1 < sizeof($gallery) ? $current + 1 : 0;
+
+  $medium = get_field('medium');
   
 ?>
 <section class="attachment-page">
@@ -66,9 +68,9 @@ if(have_posts()):while(have_posts()):the_post();
    <header>
      <nav>
       <ul>
-        <li><input type="radio" name="filter" value="all" id="all" checked data-title="All Works"><label for="all">All Works</label></li>
+        <li><input type="radio" name="filter" value="all" id="all" data-title="All Works"><label for="all">All Works</label></li>
  <?php foreach($terms as $m) { ?>
-        <li><input type="radio" name="filter" value="<?php echo $m->slug; ?>" id="<?php echo $m->slug; ?>" data-title="<?php echo $m->name; ?>"><label for="<?php echo $m->slug; ?>"><?php echo $m->name; ?></label></li>
+        <li><input type="radio" name="filter" value="<?php echo $m->slug; ?>" id="<?php echo $m->slug; ?>" data-title="<?php echo $m->name; ?>"<?php if($m->slug == $medium->slug) { echo ' checked'; } ?>><label for="<?php echo $m->slug; ?>"><?php echo $m->name; ?></label></li>
 <?php } ?>
       </ul>
     </nav>
