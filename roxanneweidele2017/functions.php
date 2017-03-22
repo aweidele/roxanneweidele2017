@@ -55,4 +55,16 @@ function addMedium() {
     register_taxonomy( 'medium', 'attachment', $args );
 }
 add_action( 'init', 'addMedium' );
+
+
+
+// CONTACT FORM SHORTCODE
+function contactform_func( $atts , $content = null ) {
+  include('inc/contact.php');
+  return;
+}
+function register_shortcodes(){
+  add_shortcode ('contact','contactform_func' );
+}
+add_action( 'init', 'register_shortcodes');
 ?>

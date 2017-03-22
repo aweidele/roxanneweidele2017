@@ -31,7 +31,18 @@ if(have_posts()):while(have_posts()):the_post();
   $medium = get_field('medium');
   
 ?>
-<section class="attachment-page">
+<section class="attachment-page" itemscope itemtype="http://schema.org/VisualArtwork">
+  <span itemprop="creator" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="<?php echo get_bloginfo('name'); ?>">
+  </span>
+  <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+    <meta itemprop="url" content="<?php echo $image['med'][0]; ?>">
+    <meta itemprop="image" content="<?php echo $image['med'][0]; ?>">
+    <meta itemprop="width" content="<?php echo $image['med'][1]; ?>">
+    <meta itemprop="height" content="<?php echo $image['med'][2]; ?>">
+    <link itemprop="image" href="<?php echo $image['med'][0]; ?>" />
+  </div>
+  <meta itemprop="artMedium" content="<?php echo ucwords($medium->name); ?>">
    <figure>
      <picture>
       <source srcset="<?php echo $image['mobile'][0]; ?>" media="(max-width:668px)">
@@ -43,13 +54,13 @@ if(have_posts()):while(have_posts()):the_post();
       <img src="<?php echo $image['large'][0]; ?>">
     </picture>
     <figcaption>
-      <h1><?php the_title(); ?></h1>
+      <h1 itemprop="name"><?php the_title(); ?></h1>
      </figcaption>
   </figure>
   <h3>Share:</h3>
   <ul class="share">
     <li><a href="http://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>" target="_blank"><span>Facebook</span><i class="icon-facebook"></i></a></li>
-    <li><a href="http://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>" target="_blank"><span>Tweet</span><i class="icon-twitter"></i></a></li>
+    <li><a href="http://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>-<?php echo get_bloginfo('name'); ?>" target="_blank"><span>Tweet</span><i class="icon-twitter"></i></a></li>
     <li><a href="//pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $post->guid; ?>&description=<?php 
   echo get_bloginfo('name'); 
   if(get_bloginfo('description') != "") { echo "–".get_bloginfo('description'); }

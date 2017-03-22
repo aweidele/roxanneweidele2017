@@ -35,13 +35,15 @@ if($additional_content_type == 'shows') {
     if($additional_content_type == 'see') { 
       foreach($additional_content as $content) { ?>
 
-    <aside>
-      <h2><?php echo $content['location_name']; ?></h2>
-      <p><a href="<?php echo $content['web_address']; ?>" target="_blank"><?php echo $content['web_address']; ?></a></p>
-      <?php echo $content['address']; ?>
-      <p><a href="https://www.google.com/maps/place/<?php echo preg_replace('/(<p>|<br \/>|<br\/>|<br>| )/','+',$content['address']); ?>" class="map-link" target="_blank"><i class="icon-location"></i> Map</a></p>
-      <p><a href="tel:<?php echo preg_replace('/[\(\) .-]/','',$content['phone_number']); ?>"><?php echo $content['phone_number']; ?></a></p>
-    </aside>
+<aside>
+<h2><?php echo $content['location_name']; ?></h2>
+<?php if($content['web_address'] != '') { ?><p><a href="<?php echo $content['web_address']; ?>" target="_blank"><?php echo $content['web_address']; ?></a></p><? } ?>
+<?php if($content['address'] != '') { ?>
+<?php echo $content['address']; ?>
+<p><a href="https://www.google.com/maps/place/<?php echo preg_replace('/(<p>|<br \/>|<br\/>|<br>| )/','+',$content['address']); ?>" class="map-link" target="_blank"><i class="icon-location"></i> Map</a></p>
+<?php } ?>
+<?php if($content['phone_number'] != '') { ?><p><a href="tel:<?php echo preg_replace('/[\(\) .-]/','',$content['phone_number']); ?>"><?php echo $content['phone_number']; ?></a></p><?php } ?>
+</aside>
 
 <?php 
   }
