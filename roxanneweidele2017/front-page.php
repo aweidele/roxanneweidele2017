@@ -27,6 +27,8 @@ if(have_posts()):
 <?php foreach($gallery as $image) {
   $info = array(
     'title' => $image['title'],
+    'name' => $image['name'],
+    'permalink' => get_permalink($image["ID"]),
     'images' => array(
       'mobileThumb' => $image['sizes']['Homepage Mobile Thumbnail'],
       'thumbnail' => $image['sizes']['Homepage Thumbnail'],
@@ -39,8 +41,8 @@ if(have_posts()):
     'medium' => get_field('medium',$image["ID"])
   );
 ?>
-  <figure data-medium='<?php echo $info['medium']->slug; ?>'>
-    <a href="<?php echo get_permalink($image["ID"]); ?>" data-slide='<?php echo json_encode($info, JSON_HEX_APOS); ?>'>
+  <figure data-medium='<?php echo $info['medium']->slug; ?>' id="<?php echo $image['name']; ?>">
+    <a href="<?php echo $info['permalink']; ?>" data-slide='<?php echo json_encode($info, JSON_HEX_APOS); ?>'>
       <picture>
         <source srcset="<?php echo $info['images']['mobileThumb']; ?>" media="(max-width: 667px)">
         <source srcset="<?php echo $info['images']['thumbnail']; ?>">

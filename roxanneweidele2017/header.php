@@ -22,6 +22,7 @@
   $locations = get_nav_menu_locations();
   $primaryMenu = wp_get_nav_menu_items($locations['primary-menu']);
 ?>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body>
