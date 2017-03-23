@@ -26,8 +26,4 @@ $(document).ready(function() {
       $('.homepage-gallery > div > figure[data-medium="'+med+'"]').fadeIn(250);
     }
   });
-  
-  //$(window).resize(function() {
-    //$('header h1').html($(window).width());
-  //});
 });
