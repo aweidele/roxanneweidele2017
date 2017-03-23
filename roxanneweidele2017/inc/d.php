@@ -1,0 +1,3 @@
+<?php
+$w = array('box','design','smash','soggy','office','purpose','thankful','diligent','eggs','shy','plug','identify','untidy','science','milk','breezy','umbrella','near','number','oil','card','rhetorical','fog','foamy','dress','word','harsh','fuzzy','type','pizzas','lying','safe','help','abortive','night','note','scissors','shop','employ','mean','black','cough','matter','beneficial','kittens','unhealthy','afford','save','private');
+?>

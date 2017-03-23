@@ -4,6 +4,35 @@
       
       li {
         margin-bottom: 1em;
+ /*       
+        > .c {
+          display: block;
+          position: relative;
+          padding-left: 20px;
+          &:after {
+            content: "I am not a robot";
+            font-size: 1.2rem;
+          }
+          &:before {
+            content: " ";
+            width: 12px;
+            height: 12px;
+            border: 1px solid $white;
+            position: absolute;
+            left: 0;
+            top: 8px;
+            transition: background $speed;
+            border-radius: 2px;
+            cursor: pointer;
+          }
+          
+          &.h {
+            &:before {
+              background: rgba($white,0.8);
+            }
+          }
+        }
+*/
       }
       
       label,input,textarea,button {

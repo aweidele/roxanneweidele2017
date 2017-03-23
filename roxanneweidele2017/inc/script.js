@@ -26,4 +26,23 @@ $(document).ready(function() {
       $('.homepage-gallery > div > figure[data-medium="'+med+'"]').fadeIn(250);
     }
   });
+  
+   /*
+  if($('form').length) {
+    b = $('form button');
+    h = '<li><span class="c"></span></li>';
+    b.parents('li').before(h);
+    $('.c').on('click',function() {
+      c = $(this);
+      if(!c.hasClass('h')) {
+        $.ajax({
+          url: "http://roxanneweidele.com/2017/wp-content/themes/roxanneweidele2017/inc/c.php"
+        }).done(function(d) {
+          c.addClass('h');
+          c.parents('li').append('<input type="hidden" name="c" id="c" value="'+d.w+'">');
+        });
+      }
+    });
+  }
+  */
 });
