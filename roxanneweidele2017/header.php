@@ -10,14 +10,14 @@
 <meta property="og:title" content="<?php wp_title ( ' | ', true,'right' ); echo get_bloginfo('name'); ?>" />
 <meta property="og:url" content="<?php echo get_permalink(); ?>" />
 <?php } ?>
-<title><?php 
-  if (is_front_page()) { 
-    echo get_bloginfo('name');
-    if (get_bloginfo('description')!="") { echo " | ".get_bloginfo('description'); }
-  } else {
-    wp_title ( ' | ', true,'right' );
-    echo get_bloginfo('name');
-  } ?></title>
+<title><?php if (is_front_page()) {
+  echo get_option( 'meta_description', '' );
+} else {
+  echo get_bloginfo('name'); 
+  if(get_bloginfo('description') != "") { echo "–".get_bloginfo('description'); }
+  echo " | ";
+  echo the_title();
+} ?></title>
 <?php wp_head();
   $locations = get_nav_menu_locations();
   $primaryMenu = wp_get_nav_menu_items($locations['primary-menu']);
