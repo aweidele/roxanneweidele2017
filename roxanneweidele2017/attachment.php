@@ -5,7 +5,7 @@ $gallery = get_field('gallery',$frontpage_id);
 
 $terms = get_terms( array(
     'taxonomy' => 'medium',
-    'hide_empty' => false,
+    'hide_empty' => true,
 ) );
 
 if(have_posts()):while(have_posts()):the_post();

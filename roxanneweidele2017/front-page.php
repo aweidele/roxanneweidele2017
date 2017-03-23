@@ -2,7 +2,7 @@
 get_header();
 $terms = get_terms( array(
     'taxonomy' => 'medium',
-    'hide_empty' => false,
+    'hide_empty' => true,
 ) );
 
 if(have_posts()):
