@@ -60,6 +60,7 @@ add_action( 'init', 'addMedium' );
 
 // CONTACT FORM SHORTCODE
 function contactform_func( $atts , $content = null ) {
+  global $post;
   include('inc/contact.php');
   return;
 }
