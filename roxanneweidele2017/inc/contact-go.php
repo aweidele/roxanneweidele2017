@@ -1,5 +1,5 @@
 <?php
-  $to = 'aweidele@gmail.com';
+  $to = 'roxanneweidele@gmail.com';
   $subject = $_POST['subject'];
   $message = $_POST['message'];
   $message .= "\n\n___________________________\n\nSent via roxanneweidele.com\n\n";

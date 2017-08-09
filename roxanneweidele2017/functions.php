@@ -5,7 +5,7 @@ function rw_scripts() {
   wp_enqueue_style( 'fonts', 'https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i|Open+Sans:300,700' );
   wp_enqueue_style( 'main-style', get_template_directory_uri() . '/main.css' );
   //wp_enqueue_style( 'main-style', get_stylesheet_uri() );
-  
+
   // scripts
   wp_enqueue_script( 'main-script', get_template_directory_uri() . '/inc/script.js', array('jquery'), '1.0.0', true );
 }
@@ -43,7 +43,7 @@ function addMedium() {
         'new_item_name'     => 'New Medium Name',
         'menu_name'         => 'Medium',
     );
- 
+
     $args = array(
         'labels' => $labels,
         'hierarchical' => true,
@@ -51,7 +51,7 @@ function addMedium() {
         'rewrite' => 'true',
         'show_admin_column' => 'true',
     );
- 
+
     register_taxonomy( 'medium', 'attachment', $args );
 }
 add_action( 'init', 'addMedium' );
@@ -62,7 +62,7 @@ add_action( 'init', 'addMedium' );
 function contactform_func( $atts , $content = null ) {
   global $post;
   include('inc/contact.php');
-  return;
+  return $form;
 }
 function register_shortcodes(){
   add_shortcode ('contact','contactform_func' );

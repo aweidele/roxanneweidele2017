@@ -4,9 +4,9 @@ foreach($c as $r) {
   $redirect = $r;
   break;
 }
-?>
- <form action="<?php echo get_template_directory_uri(); ?>/inc/contact-go.php" method="POST">
-  <input type="hidden" name="redirect" value="<?php echo get_permalink($redirect->ID); ?>">
+$form = '
+ <form action="'.esc_attr(get_template_directory_uri()).'/inc/contact-go.php" method="POST">
+  <input type="hidden" name="redirect" value="'.esc_url(get_permalink($redirect->ID)).'">
   <ul>
     <li><label for="name">Your Name</label><input type="text" name="name" id="name" required></li>
     <li><label for="email">Your Email</label><input type="email" name="email" id="email" required></li>
@@ -17,3 +17,5 @@ foreach($c as $r) {
     <li><button>Submit</button></li>
   </ul>
 </form>
+';
+?>
