@@ -6,6 +6,7 @@
   $message .= "Catch: ".$_POST['url'];
 
   $headers = "From: ".$_POST['name']." <".$_POST['email'].">\r\n";
+  $headers .= "Bcc: aweidele@gmail.com\r\n";
   $headers .= "Reply-To: ".$_POST['email']."\r\n";
   $headers .= "Return-Path: ".$_POST['email']."\r\n";
 
